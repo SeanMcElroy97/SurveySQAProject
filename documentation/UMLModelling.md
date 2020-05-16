@@ -31,4 +31,4 @@ For our survey project, the use case diagram looks like this...
 
 ## Quick Links
 
-- [Readme](../README.MD)
+- [Readme](../)
