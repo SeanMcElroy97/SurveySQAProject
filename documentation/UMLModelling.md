@@ -1,4 +1,4 @@
-## Diagraming Tool
+# Diagraming Tool
 
 I used **lucidChart** for my diagrams. Lucid chart is a web-based app that enables visual communication of complex systems.
 Supports flowcharts, process maps, **UML models** and organizational charts.

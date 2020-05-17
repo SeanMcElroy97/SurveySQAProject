@@ -1,4 +1,4 @@
-## Sprint Backlog + Task Estimation
+# Sprint Backlog + Task Estimation
 
 Having already created a use case diagram and class diagram, we are ready to move onto the sprint backlog.
 
@@ -37,7 +37,7 @@ The Sprint Backlog/Sprint board can be broken down into 3 categories
 ---
 
 <p align="center">
-<img src="images/SprintBacklogAtBeginning.jpg" alt="Survey use case diagram" width="900">
+<img src="images/SprintBacklogAtBeginning.jpg" alt="Sprint backlog at beginning" width="900">
 </p>
 
 ---
@@ -72,9 +72,26 @@ A methodoly i decided to use when prioritizing the functionality a.k.a my user s
 
 ---
 
+### Task Estimation/Sizing
+
+### T-shirt Sizing
+
+---
+
 <p align="center">
-<img src="images/SprintBacklogAtBeginning.jpg" alt="Survey use case diagram" width="900">
+<img src="images/SprintBacklogAtBeginning.jpg" alt="Image of Individual task small" width="300">
+<img src="images/SprintBacklogAtBeginning.jpg" alt="Image of Individual task medium" width="300">
+<img src="images/SprintBacklogAtBeginning.jpg" alt="Image of Individual task Large" width="300">
+
 </p>
+
+---
+
+---
+
+### Velocity Metric
+
+maybe image of a velocity metric
 
 ---
 
