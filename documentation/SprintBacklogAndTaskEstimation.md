@@ -23,9 +23,46 @@ This is another way that scrum supports agile development.
 
 ---
 
-<p align="center">
-<img src="images/x.jpeg" alt="Survey use case diagram" width="700">
-</p>
+### Sprint Backlog Categories
+
+The Sprint Backlog/Sprint board can be broken down into 3 categories
+
+1. To-Do
+   - Tasks that have to be started
+2. In-Progress
+   - Tasks that a developer has begun working on but are not complete
+3. Done
+   - This can be misconstrued. It means the task has been tested and passed and is completely ready for merging into release branch.
+
+---
+
+---
+
+### Prioritization
+
+Prioritization is the process of ensuring the most essential functionality gets done first. The process becomes more difficult the larger the list of tasks becomes.
+A methodoly i decided to use when prioritizing the functionality a.k.a my user stories was the **"MoSCoW Rules"**
+
+### MoSCoW Rules
+
+- Must Have.
+
+  - User stories that are part of core functionality. Essential.
+  - (**Create Survey**, **Respond to Survey**).
+
+- Should Have
+
+  - These feauture are not part of core functionality but equally important.
+  - (**View Survey**).
+
+- Could Have
+
+  - Not core or necessary but would benefit the feature.
+    - (A not so important part of View Survey story is **"survey statistics"**).
+
+- Won't Have
+  - Most likely will not have time to implement, but potentially in a later sprint.
+  - (E.g A user interface feature for survey project).
 
 ---
 
