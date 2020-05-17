@@ -36,6 +36,12 @@ The Sprint Backlog/Sprint board can be broken down into 3 categories
 
 ---
 
+<p align="center">
+<img src="images/SprintBacklogAtBeginning.jpg" alt="Survey use case diagram" width="900">
+</p>
+
+---
+
 ---
 
 ### Prioritization
@@ -66,9 +72,15 @@ A methodoly i decided to use when prioritizing the functionality a.k.a my user s
 
 ---
 
+<p align="center">
+<img src="images/SprintBacklogAtBeginning.jpg" alt="Survey use case diagram" width="900">
+</p>
+
+---
+
 ---
 
 ## Quick Links
 
 - [Readme](../README.md)
-- [UML Modeeling](UMLModelling.md)
+- [UML Modelling](UMLModelling.md)

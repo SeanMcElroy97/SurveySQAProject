@@ -38,7 +38,7 @@ Reasons for building these are
 - More detailed look for developers to understand how the system works
 - Identifys the relationships within the strcuture between the classes
 
-Some key reltionships
+Some key relationships
 
 - black diamond refers to composition where one class cannot exist without the other. (SurveyResponse needs a Survey)
 - straight line refers to simple relationship. Association between two. (Controller relationship with Survey)
@@ -60,3 +60,4 @@ Below you can see a rough uml class diagram for our Survey project. Some attribu
 ## Quick Links
 
 - [Readme](../README.md)
+- [Sprint Backlog And Task Estimation](SprintBacklogAndTaskEstimation.md)
