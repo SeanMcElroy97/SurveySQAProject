@@ -19,7 +19,7 @@ It contains
   - These Tasks are a subset of product backlog(list of all tasks) to be completed within a given sprint.
 
 The Sprint backlog is designed to be mutable so tasks can be added or updated if need be.
-This is another way that scrum supports agile development.
+This is one of the ways that scrum supports agile development.
 
 ---
 
@@ -134,12 +134,6 @@ Here are examples of some of my task estimations, far left I have a task marked 
 - Large
 
   - (View Survey Statistics) Statistical calculations is something i have little experience so the doubt factor increases the time i believe this will take. I believe this is one of the trickier tasks of the project thus making it an estimation of Large.
-
----
-
-### Velocity Metric
-
-maybe image of a velocity metric
 
 ---
 
