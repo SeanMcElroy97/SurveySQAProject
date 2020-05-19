@@ -23,6 +23,6 @@ public class Controller {
     }
 
     public void addSurveyToList(Survey surveyToAdd) {
-//        surveyList.add(surveyToAdd);
+        surveyList.add(surveyToAdd);
     }
 }
