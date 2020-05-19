@@ -20,9 +20,15 @@ public class Survey {
         return surveyQuestions;
     }
 
-    public void addSurveyQuestions(HashMap<Integer, String> moreSurveyQuestions){
+    public void addSurveyQuestions(HashMap<Integer, String> moreSurveyQuestions) throws AssertionError{
 
-       moreSurveyQuestions.forEach((questionNumber, questionSTr) -> surveyQuestions.put(questionNumber, questionSTr));
+       moreSurveyQuestions.forEach((questionNumber, questionSTr) -> {
+           if (surveyQuestions.size() >= 10) {
+               throw new AssertionError();
+           } else {
+               surveyQuestions.put(questionNumber, questionSTr);
+           }
+       });
     }
 
 }
