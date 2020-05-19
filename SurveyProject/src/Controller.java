@@ -46,7 +46,7 @@ public class Controller {
         emptySurveyResponse.addAnswersToResponse(surveyAnswers);
     }
 
-    public void addSurveyResponseToSurvey(Survey endOfYearSurvey, SurveyResponse endOfYearSurveyResponse) {
-        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse);
+    public void addSurveyResponseToSurvey(Survey survey, SurveyResponse surveyResponse) {
+        survey.addSurveyResponse(surveyResponse);
     }
 }
