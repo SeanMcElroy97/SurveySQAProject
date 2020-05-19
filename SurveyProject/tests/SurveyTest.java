@@ -121,5 +121,12 @@ public class SurveyTest {
 
     //End of Survey Creation
 
+    @Test
+    public void createSurveyResponse(){
+        SurveyResponse emptySurveyResponse = c.createEmptySurveyResponse();
+
+        assertTrue("create Empty Survey Response", emptySurveyResponse instanceof SurveyResponse);
+    }
+
     //Respond to Survey
 }
