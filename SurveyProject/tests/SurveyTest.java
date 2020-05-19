@@ -94,4 +94,17 @@ public class SurveyTest {
     }
 
 
+    @Test
+    public void addSurveyToSurveyCollection(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        Survey startOfYearSurvey = c.createSurveyWithName("Start of year survey");
+
+        c.addSurveyToList(endOfYearSurvey);
+        c.addSurveyToList(startOfYearSurvey);
+
+        int numberOfSurveys = c.getSurveyList().size();
+
+        assertEquals(2, numberOfSurveys);
+
+    }
 }
