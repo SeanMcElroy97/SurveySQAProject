@@ -145,3 +145,4 @@ Here are examples of some of my task estimations, far left I have a task marked 
 - [UML Modelling](UMLModelling.md)
 - [Unit Testing And Test Driven Development](UnitTestingAndTestDrivenDevelopment.md)
 - [Team Version Control](TeamVersionControl.md)
+- [Code Review Checklist](CodeReviewChecklist.md)

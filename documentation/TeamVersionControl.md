@@ -115,3 +115,4 @@ The workflow steps we should follow during development are
 - [UML Modelling](UMLModelling.md)
 - [Sprint Backlog And Task Estimation](SprintBacklogAndTaskEstimation.md)
 - [Unit Testing And Test Driven Development](UnitTestingAndTestDrivenDevelopment.md)
+- [Code Review Checklist](CodeReviewChecklist.md)
