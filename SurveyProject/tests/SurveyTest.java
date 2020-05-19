@@ -1,6 +1,8 @@
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -183,6 +185,40 @@ public class SurveyTest {
         endOfYearSurveyResponse.addAnswersToResponse(surveyAnswers);
 
         endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse);
+
+
+    }
+
+
+    //Viewing survey
+
+    //Return collection of survey
+    @Test
+    public void testViewAllSurveys(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        Survey startOfYearSurvey = c.createSurveyWithName("startOfYearSurvey");
+
+        List<Survey> surveyList = new ArrayList<>();
+        surveyList.add(endOfYearSurvey);
+        surveyList.add(startOfYearSurvey);
+
+        c.addSurveyToList(endOfYearSurvey);
+        c.addSurveyToList(startOfYearSurvey);
+
+        assertEquals(surveyList, c.getSurveyList());
+    }
+
+    @Test
+    public void findSurveyByNameTest(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        Survey startOfYearSurvey = c.createSurveyWithName("startOfYearSurvey");
+
+        c.addSurveyToList(endOfYearSurvey);
+        c.addSurveyToList(startOfYearSurvey);
+
+        Survey surveyFoundByName = c.findSurveyByName(endofYearSurveyName);
+
+        assertEquals(endOfYearSurvey, surveyFoundByName);
 
 
     }

@@ -49,4 +49,13 @@ public class Controller {
     public void addSurveyResponseToSurvey(Survey survey, SurveyResponse surveyResponse) {
         survey.addSurveyResponse(surveyResponse);
     }
+
+    public Survey findSurveyByName(String endofYearSurveyName) {
+        for(Survey survey : surveyList){
+            if (survey.getSurveyName().equalsIgnoreCase(endofYearSurveyName)){
+                return survey;
+            }
+        }
+        return null;
+    }
 }
