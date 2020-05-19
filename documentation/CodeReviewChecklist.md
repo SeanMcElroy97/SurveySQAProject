@@ -59,10 +59,44 @@ For our checklist we should follow these steps
 
 ### Code Review Example
 
+[Pull Request](https://github.com/SeanMcElroy97/SurveySQAProject/pull/10)
+
 ---
 
+### Step 1. Ensure Correct Branch
+
 <p align="center">
-<img src="images/codeReview5Steps.PNG" alt="Image of pull request with checklist highlighted" width="700">
+<img src="images/CodeChecklistPR/ChecklistOneCorrectBranch.PNG" alt="Image of correct branch merge" width="700">
+</p>
+
+---
+
+---
+
+### Step 2. Check Conversation Tab.
+
+<p align="center">
+<img src="images/CodeChecklistPR/ChecklistTwoConversationTab.PNG" alt="Conversation Tab" width="700">
+</p>
+
+---
+
+---
+
+### Step 3. Check Commits Tab.
+
+<p align="center">
+<img src="images/CodeChecklistPR/ChecklistThreeCommitsTab.PNG" alt="Commits Tab" width="700">
+</p>
+
+---
+
+---
+
+### Step 4. Verify changes in files.
+
+<p align="center">
+<img src="images/CodeChecklistPR/ChecklistFourVerifyChanges.PNG" alt="Files changed Tab" width="700">
 </p>
 
 ---
