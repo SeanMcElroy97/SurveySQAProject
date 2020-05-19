@@ -1,9 +1,12 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Survey {
 
     private String surveyName;
     private HashMap<Integer, String> surveyQuestions = new HashMap<>();
+    private List<SurveyResponse> surveyResponses = new ArrayList<>();
 
     public Survey(){}
 
@@ -30,5 +33,6 @@ public class Survey {
            }
        });
     }
+
 
 }

@@ -121,6 +121,9 @@ public class SurveyTest {
 
     //End of Survey Creation
 
+
+    //Survey Response
+
     @Test
     public void createSurveyResponse(){
         SurveyResponse emptySurveyResponse = c.createEmptySurveyResponse();
@@ -142,5 +145,16 @@ public class SurveyTest {
         assertEquals(2, numberOfSurveyAnswers);
     }
 
-    //Respond to Survey
+    @Test(expected = AssertionError.class)
+    public void addInvalidResponseAnswer(){
+        SurveyResponse surveyResponse = c.createEmptySurveyResponse();
+
+        HashMap<Integer, Integer> surveyAnswers = new HashMap<>();
+        surveyAnswers.put(2, 6);
+
+        c.addAnswerToSurveyResponse(surveyResponse, surveyAnswers);
+
+    }
+
+
 }
