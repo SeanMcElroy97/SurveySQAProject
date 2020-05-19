@@ -1,9 +1,12 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Survey {
 
     private String surveyName;
     private HashMap<Integer, String> surveyQuestions = new HashMap<>();
+    private List<SurveyResponse> surveyResponses = new ArrayList<>();
 
     public Survey(){}
 
@@ -31,4 +34,19 @@ public class Survey {
        });
     }
 
+
+    public List<SurveyResponse> getSurveyResponses() {
+        return surveyResponses;
+    }
+
+    public void addSurveyResponse(SurveyResponse surveyResponse){
+
+        //Compare hashmaps by keys. Same keys good.
+        if(surveyResponse.getSurveyAnswers().keySet().equals(this.surveyQuestions.keySet())){
+            this.surveyResponses.add(surveyResponse);
+        }else {
+            throw new AssertionError("Question numbers dont match");
+        }
+
+    }
 }

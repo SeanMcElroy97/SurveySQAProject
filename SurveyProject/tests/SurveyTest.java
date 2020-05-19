@@ -121,5 +121,71 @@ public class SurveyTest {
 
     //End of Survey Creation
 
-    //Respond to Survey
+
+    //Survey Response
+
+    @Test
+    public void createSurveyResponse(){
+        SurveyResponse emptySurveyResponse = c.createEmptySurveyResponse();
+
+        assertTrue("create Empty Survey Response", emptySurveyResponse instanceof SurveyResponse);
+    }
+
+    @Test
+    public void addAnswersToSurveyResponse(){
+        SurveyResponse surveyResponse = c.createEmptySurveyResponse();
+
+        HashMap<Integer, Integer> surveyAnswers = new HashMap<>();
+        surveyAnswers.put(1, 2);
+        surveyAnswers.put(2, 4);
+
+        c.addAnswerToSurveyResponse(surveyResponse, surveyAnswers);
+
+        int numberOfSurveyAnswers= surveyResponse.getSurveyAnswers().size();
+        assertEquals(2, numberOfSurveyAnswers);
+    }
+
+    @Test(expected = AssertionError.class)
+    public void addInvalidResponseAnswer(){
+        SurveyResponse surveyResponse = c.createEmptySurveyResponse();
+
+        HashMap<Integer, Integer> surveyAnswers = new HashMap<>();
+        surveyAnswers.put(2, 6);
+
+        c.addAnswerToSurveyResponse(surveyResponse, surveyAnswers);
+
+    }
+
+    @Test
+    public void addSurveyResponseToSurvey(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        SurveyResponse endOfYearSurveyResponse = c.createEmptySurveyResponse();
+
+        c.addSurveyResponseToSurvey(endOfYearSurvey, endOfYearSurveyResponse);
+
+        int numOfSurveyResponses = endOfYearSurvey.getSurveyResponses().size();
+
+        assertEquals(1, numOfSurveyResponses);
+    }
+
+    @Test(expected = AssertionError.class)
+    public void testDifferentNumOfAnswersToQuestions(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        HashMap<Integer, String> listOfQuestions = new HashMap<>();
+        listOfQuestions.put(1, "How good was your year?");
+        listOfQuestions.put(2, "How likely will you recommend SQA module to a friend?");
+
+        endOfYearSurvey.addSurveyQuestions(listOfQuestions);
+
+        SurveyResponse endOfYearSurveyResponse = c.createEmptySurveyResponse();
+        HashMap<Integer, Integer> surveyAnswers = new HashMap<>();
+        surveyAnswers.put(1, 2);
+        endOfYearSurveyResponse.addAnswersToResponse(surveyAnswers);
+
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse);
+
+
+    }
+
+
 }

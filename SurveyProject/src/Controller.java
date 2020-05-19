@@ -34,4 +34,19 @@ public class Controller {
     public void addSurveyToList(Survey surveyToAdd) {
         surveyList.add(surveyToAdd);
     }
+
+    ////////////////////////////////////////////
+
+    public SurveyResponse createEmptySurveyResponse(){
+        return new SurveyResponse();
+    }
+
+
+    public void addAnswerToSurveyResponse(SurveyResponse emptySurveyResponse, HashMap<Integer, Integer> surveyAnswers) {
+        emptySurveyResponse.addAnswersToResponse(surveyAnswers);
+    }
+
+    public void addSurveyResponseToSurvey(Survey survey, SurveyResponse surveyResponse) {
+        survey.addSurveyResponse(surveyResponse);
+    }
 }
