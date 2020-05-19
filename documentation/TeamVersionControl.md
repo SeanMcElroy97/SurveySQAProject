@@ -25,16 +25,38 @@ A good process to follow for Team version control is the **git flow process**
 
 ---
 
-### Git flow process
+## Git flow process
 
 It defines a strict branching model design.
 Each branch has specific role.
 
-The steps we should follow are
+From the image below, if my branching naming is correct you should be able to determine what functionality is in what branch
+
+- 'sprint-backlog-plus-task-estimation'
+
+  - this branch is where i included my sprint backlog and my task estimates.
+
+- 'testing-theory'
+  - this branch explains the theory by test driven development and my process for unit testing
+
+---
+
+<p align="center">
+<img src="images/DifferentFeatureBranches.PNG" alt="Example of feature branches">
+</p>
+
+---
+
+---
+
+## Git flow Steps
+
+The workflow steps we should follow during development are
 
 1. Create the project
 
    - locally or directly on DVCS like Github
+   - DVCS = Distributed Version control system
 
 2. Create 'develop' branch off of 'master'
 
@@ -82,3 +104,14 @@ The steps we should follow are
    - This step is important to avoid potential of conflicts.
    - Each develop should pull the latest versions of the project, before making changes.
    - can be done with something like 'git pull (desired branch name)'
+
+---
+
+---
+
+## Quick Links
+
+- [Readme](../README.md)
+- [UML Modelling](UMLModelling.md)
+- [Sprint Backlog And Task Estimation](SprintBacklogAndTaskEstimation.md)
+- [Unit Testing And Test Driven Development](UnitTestingAndTestDrivenDevelopment.md)
