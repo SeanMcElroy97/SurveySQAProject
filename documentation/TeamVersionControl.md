@@ -41,6 +41,8 @@ From the image below, if my branching naming is correct you should be able to de
 
 ---
 
+## Some of the branches, most created off 'develop'
+
 <p align="center">
 <img src="images/DifferentFeatureBranches.PNG" alt="Example of feature branches">
 </p>

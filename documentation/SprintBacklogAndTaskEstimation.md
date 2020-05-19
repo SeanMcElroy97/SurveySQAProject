@@ -137,6 +137,39 @@ Here are examples of some of my task estimations, far left I have a task marked 
 
 ---
 
+### Velocity
+
+- The velocity metric is used to determin the size of the entire sprint.
+
+- To calculate the velocity of a sprint, you must add up all the story points for each task.
+
+- In our case with using T-shirt sizing estimation we will say
+
+  - Small = 1 hour
+  - Medium = 2 hours
+  - Large = 5 hours
+
+- Velocity of Survey Project. (Story points for one task multiplied by number of tasks)
+
+  - Small x 2 = 2
+  - Medium x 4 = 8
+  - Large x 4 = 20
+
+- The total velocity for our sprint will be **30 hours**.
+
+- If i were to use a burndown chart i could accurate predict my completion time.
+
+#### Burndown Chart
+
+- Graphical representation of work left to do in a sprint.
+- y axis we have story points.
+- x axis we have time.
+- With a burndown chart we can predict likelihood of completing work in time available.
+- Closer to gradual decrease of story points the better. 1:1 ratio with time.
+- If your development is far off, you need to change estimation for next sprint.
+
+---
+
 ---
 
 ## Quick Links
