@@ -156,5 +156,17 @@ public class SurveyTest {
 
     }
 
+    @Test
+    public void addSurveyResponseToSurvey(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        SurveyResponse endOfYearSurveyResponse = c.createEmptySurveyResponse();
+
+        c.addSurveyResponseToSurvey(endOfYearSurvey, endOfYearSurveyResponse);
+
+        int numOfSurveyResponses = endOfYearSurvey.getSurveyResponses().size();
+
+        assertEquals(1, numOfSurveyResponses);
+    }
+
 
 }

@@ -35,4 +35,11 @@ public class Survey {
     }
 
 
+    public List<SurveyResponse> getSurveyResponses() {
+        return surveyResponses;
+    }
+
+    public void addSurveyResponse(SurveyResponse surveyResponse){
+        this.surveyResponses.add(surveyResponse);
+    }
 }

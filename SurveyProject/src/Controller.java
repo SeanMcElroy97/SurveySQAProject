@@ -45,4 +45,8 @@ public class Controller {
     public void addAnswerToSurveyResponse(SurveyResponse emptySurveyResponse, HashMap<Integer, Integer> surveyAnswers) {
         emptySurveyResponse.addAnswersToResponse(surveyAnswers);
     }
+
+    public void addSurveyResponseToSurvey(Survey endOfYearSurvey, SurveyResponse endOfYearSurveyResponse) {
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse);
+    }
 }
