@@ -10,7 +10,16 @@ public class Controller {
         return new Survey();
     }
 
-    public Survey createSurveyWithName(String name){
+    public Survey createSurveyWithName(String name) {
+        for (Survey s: surveyList){
+            if (s.getSurveyName() == name){
+                try {
+                    throw new AssertionError("survey already exists");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
         return new Survey(name);
     }
 

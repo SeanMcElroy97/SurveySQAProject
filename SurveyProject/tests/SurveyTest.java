@@ -9,6 +9,7 @@ public class SurveyTest {
     Controller c = new Controller();
     String endofYearSurveyName = "End of year survey";
 
+    //SUrvey creation
     @Test
     public void getControllerInstance(){
         Controller controllerObj = new Controller();
@@ -107,4 +108,18 @@ public class SurveyTest {
         assertEquals(2, numberOfSurveys);
 
     }
+
+    @Test(expected = AssertionError.class)
+    public void testNewSurveyWithExistingName(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        c.addSurveyToList(endOfYearSurvey);
+
+        Survey endofYearImposterSurvey = c.createSurveyWithName(endofYearSurveyName);
+        c.addSurveyToList(endofYearImposterSurvey);
+    }
+
+
+    //End of Survey Creation
+
+    //Respond to Survey
 }
