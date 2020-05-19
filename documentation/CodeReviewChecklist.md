@@ -48,6 +48,14 @@ For our checklists we should follow these steps
 
 ---
 
+### Code Review Example
+
+---
+
+<p align="center">
+<img src="images/codeReview5Steps.PNG" alt="Image of pull request with checklist highlighted" width="700">
+</p>
+
 ---
 
 ---
