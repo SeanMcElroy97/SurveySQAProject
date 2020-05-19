@@ -40,6 +40,13 @@ public class Survey {
     }
 
     public void addSurveyResponse(SurveyResponse surveyResponse){
-        this.surveyResponses.add(surveyResponse);
+
+        //Compare hashmaps by keys. Same keys good.
+        if(surveyResponse.getSurveyAnswers().keySet().equals(this.surveyQuestions.keySet())){
+            this.surveyResponses.add(surveyResponse);
+        }else {
+            throw new AssertionError("Question numbers dont match");
+        }
+
     }
 }

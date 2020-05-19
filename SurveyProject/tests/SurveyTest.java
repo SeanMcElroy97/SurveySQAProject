@@ -168,5 +168,24 @@ public class SurveyTest {
         assertEquals(1, numOfSurveyResponses);
     }
 
+    @Test(expected = AssertionError.class)
+    public void testDifferentNumOfAnswersToQuestions(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        HashMap<Integer, String> listOfQuestions = new HashMap<>();
+        listOfQuestions.put(1, "How good was your year?");
+        listOfQuestions.put(2, "How likely will you recommend SQA module to a friend?");
+
+        endOfYearSurvey.addSurveyQuestions(listOfQuestions);
+
+        SurveyResponse endOfYearSurveyResponse = c.createEmptySurveyResponse();
+        HashMap<Integer, Integer> surveyAnswers = new HashMap<>();
+        surveyAnswers.put(1, 2);
+        endOfYearSurveyResponse.addAnswersToResponse(surveyAnswers);
+
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse);
+
+
+    }
+
 
 }
