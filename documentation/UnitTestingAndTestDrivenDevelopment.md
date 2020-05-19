@@ -93,3 +93,4 @@ example pics here
 - [UML Modelling](UMLModelling.md)
 - [Sprint Backlog And Task Estimation](SprintBacklogAndTaskEstimation.md)
 - [Team Version Control](TeamVersionControl.md)
+- [Code Review Checklist](CodeReviewChecklist.md)

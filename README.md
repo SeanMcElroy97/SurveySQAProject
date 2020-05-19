@@ -20,7 +20,7 @@ Following a test driven approach.
 ## **Topics Covered:**
 
 - ### [UML Modelling](documentation/UMLModelling.md)
-
 - ### [Sprint Backlog & Task Estimation](documentation/SprintBacklogAndTaskEstimation.md)
 - ### [Unit Testing And Test Driven Development](documentation/UnitTestingAndTestDrivenDevelopment.md)
 - ### [Team Version Control](documentation/TeamVersionControl.md)
+- ### [Code Review Checklist](documentation/CodeReviewChecklist.md)

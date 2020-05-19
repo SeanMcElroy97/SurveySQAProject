@@ -63,3 +63,4 @@ Below you can see a rough uml class diagram for our Survey project. Some attribu
 - [Sprint Backlog And Task Estimation](SprintBacklogAndTaskEstimation.md)
 - [Unit Testing And Test Driven Development](UnitTestingAndTestDrivenDevelopment.md)
 - [Team Version Control](TeamVersionControl.md)
+- [Code Review Checklist](CodeReviewChecklist.md)
