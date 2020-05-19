@@ -42,4 +42,7 @@ public class Controller {
     }
 
 
+    public void addAnswerToSurveyResponse(SurveyResponse emptySurveyResponse, HashMap<Integer, Integer> surveyAnswers) {
+        emptySurveyResponse.addAnswersToResponse(surveyAnswers);
+    }
 }

@@ -128,5 +128,19 @@ public class SurveyTest {
         assertTrue("create Empty Survey Response", emptySurveyResponse instanceof SurveyResponse);
     }
 
+    @Test
+    public void addAnswersToSurveyResponse(){
+        SurveyResponse surveyResponse = c.createEmptySurveyResponse();
+
+        HashMap<Integer, Integer> surveyAnswers = new HashMap<>();
+        surveyAnswers.put(1, 2);
+        surveyAnswers.put(2, 4);
+
+        c.addAnswerToSurveyResponse(surveyResponse, surveyAnswers);
+
+        int numberOfSurveyAnswers= surveyResponse.getSurveyAnswers().size();
+        assertEquals(2, numberOfSurveyAnswers);
+    }
+
     //Respond to Survey
 }
