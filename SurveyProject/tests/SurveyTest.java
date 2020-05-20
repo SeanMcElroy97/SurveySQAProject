@@ -227,8 +227,6 @@ public class SurveyTest {
 
     }
 
-//    @Rule
-//    public ExpectedException thrown = ExpectedException.none();
 
     @Test(expected = NullPointerException.class)
     public void findSurveyByNameThatDoesntExist(){
@@ -236,6 +234,24 @@ public class SurveyTest {
         c.addSurveyToList(endOfYearSurvey);
         Survey surveyFoundByName = c.findSurveyByName("turkey");
 
+    }
+
+    @Test
+    public void getAllResponsesToSurvey(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        SurveyResponse endOfYearSurveyResponse1 = new SurveyResponse();
+        SurveyResponse endOfYearSurveyResponse2 = new SurveyResponse();
+
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse1);
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse2);
+
+        //
+        List localSurveyResponses = new ArrayList();
+        localSurveyResponses.add(endOfYearSurveyResponse1);
+        localSurveyResponses.add(endOfYearSurveyResponse2);
+
+
+        assertEquals(localSurveyResponses, endOfYearSurvey.getSurveyResponses());
     }
 
 
