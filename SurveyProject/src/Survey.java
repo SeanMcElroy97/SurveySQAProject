@@ -56,7 +56,7 @@ public class Survey {
         }
     }
 
-    public double getAverageSurveyScore(){
+    public double getAverageScore(){
 
         if(surveyResponses.size()>0){
             int numberOfTotalAnswers =0;
@@ -75,14 +75,14 @@ public class Survey {
     }
 
     //Population standard dev. divided by n. Not n-1 for sample.
-    public double getSurveyStdDeviation(){
+    public double getStdDeviation(){
         //Get mean
         //x =sum of each (value- the mean) squared
         //std square of (x/size)
 
 
         List<Integer> allAnswerScores= new ArrayList<>();
-        double mean = getAverageSurveyScore();
+        double mean = getAverageScore();
         int size =0;
 
         for(SurveyResponse sr: surveyResponses){
@@ -105,7 +105,7 @@ public class Survey {
     }
 
 
-    public int getMinimumSurveyScore(){
+    public int getMinimumScore(){
         List<Integer> listOfResponseScores = new ArrayList<>();
         int minScore =0;
 
@@ -116,5 +116,18 @@ public class Survey {
         minScore=Collections.min(listOfResponseScores);
 
         return minScore;
+    }
+
+    public int getMaximumScore(){
+        List<Integer> listOfResponseScores = new ArrayList<>();
+        int maxScore =0;
+
+        for(SurveyResponse sr: surveyResponses){
+            listOfResponseScores.addAll(new ArrayList<Integer>(sr.getSurveyAnswers().values()));
+        }
+
+        maxScore=Collections.max(listOfResponseScores);
+
+        return maxScore;
     }
 }

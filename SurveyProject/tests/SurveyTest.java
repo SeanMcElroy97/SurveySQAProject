@@ -314,6 +314,41 @@ public class SurveyTest {
         assertEquals(1.5, c.calculateSurveyStdDeviation(endOfYearSurvey), 0.0);
     }
 
+    @Test
+    public void testCalculateStandardDeviationMultipleQuestions(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        HashMap<Integer, String> listOfQuestions = new HashMap<>();
+        listOfQuestions.put(1, "How good was your year?");
+        listOfQuestions.put(2, "How likely will you recommend SQA module to a friend?");
+        endOfYearSurvey.addSurveyQuestions(listOfQuestions);
+
+        //Responses
+        SurveyResponse endOfYearSurveyResponse1 = new SurveyResponse();
+        HashMap<Integer, Integer> survey1Answers = new HashMap<>();
+        survey1Answers.put(1, 2);
+        survey1Answers.put(2, 3);
+        endOfYearSurveyResponse1.addAnswersToResponse(survey1Answers);
+        ///
+        SurveyResponse endOfYearSurveyResponse2 = new SurveyResponse();
+        HashMap<Integer, Integer> survey2Answers = new HashMap<>();
+        survey2Answers.put(1, 4);
+        survey2Answers.put(2, 5);
+        endOfYearSurveyResponse2.addAnswersToResponse(survey2Answers);
+        ///
+        SurveyResponse endOfYearSurveyResponse3 = new SurveyResponse();
+        HashMap<Integer, Integer> survey3Answers = new HashMap<>();
+        survey3Answers.put(1, 1);
+        survey3Answers.put(2, 2);
+        endOfYearSurveyResponse3.addAnswersToResponse(survey3Answers);
+        ///
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse1);
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse2);
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse3);
+
+
+        assertEquals(1.3437096247164249, c.calculateSurveyStdDeviation(endOfYearSurvey), 0.0);
+    }
+
 
     @Test
     public void testMinimumScoreForSurvey(){
@@ -337,6 +372,32 @@ public class SurveyTest {
         endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse2);
 
         assertEquals(2, c.getSurveyMinimumScore(endOfYearSurvey));
+
+
+    }
+
+    @Test
+    public void testMaximumScoreForSurvey(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        HashMap<Integer, String> listOfQuestions = new HashMap<>();
+        listOfQuestions.put(1, "How good was your year?");
+        endOfYearSurvey.addSurveyQuestions(listOfQuestions);
+
+        //Responses
+        SurveyResponse endOfYearSurveyResponse1 = new SurveyResponse();
+        HashMap<Integer, Integer> survey1Answers = new HashMap<>();
+        survey1Answers.put(1, 2);
+        endOfYearSurveyResponse1.addAnswersToResponse(survey1Answers);
+        ///
+        SurveyResponse endOfYearSurveyResponse2 = new SurveyResponse();
+        HashMap<Integer, Integer> survey2Answers = new HashMap<>();
+        survey2Answers.put(1, 5);
+        endOfYearSurveyResponse2.addAnswersToResponse(survey2Answers);
+        ///
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse1);
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse2);
+
+        assertEquals(5, c.getSurveyMaximumScore(endOfYearSurvey));
 
 
     }
