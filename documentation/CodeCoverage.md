@@ -8,7 +8,7 @@ Code coverage or test coverage is a way of quantifying the amount of your source
 
 - In our example the specific code coverage metric will be coverage from unit tests.
 
-- Typically a good code coverage percentage is 85%-90%. - i.e. This is the percentage of your code is covered by testing.
+- Typically a good code coverage percentage is **85% - 90%**. - i.e. This is the percentage of your code is covered by testing.
 
 - The higher the percentage of code coverage. The more confident you can be about bugs and defects.
 
@@ -17,6 +17,34 @@ Code coverage or test coverage is a way of quantifying the amount of your source
 - A popular tool used for Code Coverage is SonarQube.
 
 - Many IDE's have in built code coverage. Since I'm using IntelliJ, I will use inbuilt code coverage provided by intelliJ.
+
+---
+
+## Total Code Coverage
+
+From the image below you can see my code coverage is **99%**
+
+---
+
+<p align="center">
+<img src="images/CodeCoverage/CodeCoverageTotal.PNG" alt="Code Coverage Total" width="700">
+</p>
+
+---
+
+---
+
+## Specific class Coverage
+
+The areas highlighted green show code that is well covered.
+
+The areas highlighted red show code that isn't well covered.
+
+---
+
+<p align="center">
+<img src="images/CodeCoverage/CodeCoverageGreenRed.PNG" alt="Code Coverage Controller class" width="700">
+</p>
 
 ---
 
