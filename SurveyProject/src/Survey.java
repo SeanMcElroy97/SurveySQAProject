@@ -130,4 +130,59 @@ public class Survey {
 
         return maxScore;
     }
+
+
+
+
+    public List<Integer> getQuestionAnswersList(int questionNumber){
+        List<Integer> answers = new ArrayList<>();
+
+        for(SurveyResponse sr: surveyResponses){
+            sr.getSurveyAnswers().forEach((questionNum,answer)->{
+                if(questionNum==questionNumber) {
+                    answers.add(answer);
+                }
+            } );
+        }
+
+        return answers;
+    }
+
+    public double getQuestionMeanAverage(int questionNumber){
+
+        int totalNumberOfAnswers = surveyResponses.size();
+
+
+        double sumOfAnswers =0;
+        for (Integer i: getQuestionAnswersList(questionNumber)){
+            sumOfAnswers+=i;
+        }
+
+        return sumOfAnswers/totalNumberOfAnswers;
+    }
+
+    public double getQuestionStandardDeviation(int questionNumber){
+        //x =sum of each (value- the mean) squared
+        double x = 0.0;
+        double stdDeviation = 0.0;
+        double meanAvg = getQuestionMeanAverage(questionNumber);
+        List<Integer> questionAnswersList = getQuestionAnswersList(questionNumber);
+
+        for (Integer answer : questionAnswersList){
+            x += Math.pow(answer-meanAvg, 2);
+        }
+
+        stdDeviation = Math.sqrt(x/questionAnswersList.size());
+
+        return stdDeviation;
+    }
+
+
+    public int getQuestionMinimumAnswer(int questionNumber){
+        return Collections.min(getQuestionAnswersList(questionNumber));
+    }
+
+    public int getQuestionMaximumAnswer(int questionNumber) {
+        return Collections.max(getQuestionAnswersList(questionNumber));
+    }
 }

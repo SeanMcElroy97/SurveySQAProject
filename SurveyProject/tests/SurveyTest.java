@@ -402,5 +402,119 @@ public class SurveyTest {
 
     }
 
+    @Test
+    public void getQuestionAverageScore(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        HashMap<Integer, String> listOfQuestions = new HashMap<>();
+        listOfQuestions.put(1, "How good was your year?");
+        listOfQuestions.put(2, "How likely will you recommend SQA module to a friend?");
+        endOfYearSurvey.addSurveyQuestions(listOfQuestions);
+
+        //Responses
+        SurveyResponse endOfYearSurveyResponse1 = new SurveyResponse();
+        HashMap<Integer, Integer> survey1Answers = new HashMap<>();
+        survey1Answers.put(1, 2);
+        survey1Answers.put(2,4);
+        endOfYearSurveyResponse1.addAnswersToResponse(survey1Answers);
+        ///
+        SurveyResponse endOfYearSurveyResponse2 = new SurveyResponse();
+        HashMap<Integer, Integer> survey2Answers = new HashMap<>();
+        survey2Answers.put(1, 5);
+        survey2Answers.put(2,1);
+        endOfYearSurveyResponse2.addAnswersToResponse(survey2Answers);
+        ///
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse1);
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse2);
+
+
+        assertEquals(3.5,  c.getSurveyQuestionAnswerAverage(endOfYearSurvey, 1), 0.0);
+    }
+
+
+    @Test
+    public void testQuestionStandardDeviation(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        HashMap<Integer, String> listOfQuestions = new HashMap<>();
+        listOfQuestions.put(1, "How good was your year?");
+        listOfQuestions.put(2, "How likely will you recommend SQA module to a friend?");
+        endOfYearSurvey.addSurveyQuestions(listOfQuestions);
+
+        //Responses
+        SurveyResponse endOfYearSurveyResponse1 = new SurveyResponse();
+        HashMap<Integer, Integer> survey1Answers = new HashMap<>();
+        survey1Answers.put(1, 2);
+        survey1Answers.put(2,4);
+        endOfYearSurveyResponse1.addAnswersToResponse(survey1Answers);
+        ///
+        SurveyResponse endOfYearSurveyResponse2 = new SurveyResponse();
+        HashMap<Integer, Integer> survey2Answers = new HashMap<>();
+        survey2Answers.put(1, 5);
+        survey2Answers.put(2,5);
+        endOfYearSurveyResponse2.addAnswersToResponse(survey2Answers);
+        ///
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse1);
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse2);
+
+        assertEquals(1.5, c.getSurveyQuestionAnswerStdDeviation(endOfYearSurvey, 1), 0.0);
+    }
+
+
+    @Test
+    public void testQuestionMinAnswer(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        HashMap<Integer, String> listOfQuestions = new HashMap<>();
+        listOfQuestions.put(1, "How good was your year?");
+        listOfQuestions.put(2, "How likely will you recommend SQA module to a friend?");
+        endOfYearSurvey.addSurveyQuestions(listOfQuestions);
+
+        //Responses
+        SurveyResponse endOfYearSurveyResponse1 = new SurveyResponse();
+        HashMap<Integer, Integer> survey1Answers = new HashMap<>();
+        survey1Answers.put(1, 2);
+        survey1Answers.put(2,4);
+        endOfYearSurveyResponse1.addAnswersToResponse(survey1Answers);
+        ///
+        SurveyResponse endOfYearSurveyResponse2 = new SurveyResponse();
+        HashMap<Integer, Integer> survey2Answers = new HashMap<>();
+        survey2Answers.put(1, 5);
+        survey2Answers.put(2,3);
+        endOfYearSurveyResponse2.addAnswersToResponse(survey2Answers);
+        ///
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse1);
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse2);
+        //
+
+        assertEquals(3,c.getQuestionMinAnswer(endOfYearSurvey, 2));
+    }
+
+
+    @Test
+    public void testQuestionMaxAnswer(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        HashMap<Integer, String> listOfQuestions = new HashMap<>();
+        listOfQuestions.put(1, "How good was your year?");
+        listOfQuestions.put(2, "How likely will you recommend SQA module to a friend?");
+        endOfYearSurvey.addSurveyQuestions(listOfQuestions);
+
+        //Responses
+        SurveyResponse endOfYearSurveyResponse1 = new SurveyResponse();
+        HashMap<Integer, Integer> survey1Answers = new HashMap<>();
+        survey1Answers.put(1, 2);
+        survey1Answers.put(2,4);
+        endOfYearSurveyResponse1.addAnswersToResponse(survey1Answers);
+        ///
+        SurveyResponse endOfYearSurveyResponse2 = new SurveyResponse();
+        HashMap<Integer, Integer> survey2Answers = new HashMap<>();
+        survey2Answers.put(1, 5);
+        survey2Answers.put(2,3);
+        endOfYearSurveyResponse2.addAnswersToResponse(survey2Answers);
+        ///
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse1);
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse2);
+        //
+
+        assertEquals(4,c.getQuestionMaxAnswer(endOfYearSurvey, 2));
+    }
+
 
 }

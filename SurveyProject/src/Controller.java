@@ -71,4 +71,20 @@ public class Controller {
     public int getSurveyMaximumScore(Survey survey) {
         return survey.getMaximumScore();
     }
+
+    public double getSurveyQuestionAnswerAverage(Survey survey, int questionNumber) {
+        return survey.getQuestionMeanAverage( questionNumber);
+    }
+
+    public double getSurveyQuestionAnswerStdDeviation(Survey survey, int questionNumber) {
+        return survey.getQuestionStandardDeviation(questionNumber);
+    }
+
+    public int getQuestionMinAnswer(Survey survey, int questionNumber) {
+        return survey.getQuestionMinimumAnswer(questionNumber);
+    }
+
+    public int getQuestionMaxAnswer(Survey survey, int questionNumber) {
+        return survey.getQuestionMaximumAnswer(questionNumber);
+    }
 }
