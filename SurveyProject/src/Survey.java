@@ -56,16 +56,24 @@ public class Survey {
         }
     }
 
+    public List<Integer> getListOfSurveyAnswers(){
+
+        List<Integer> listOfAllSurveyAnswers = new ArrayList<>();
+
+        for(SurveyResponse response: surveyResponses){
+            response.getSurveyAnswers().forEach((QuestionNum, answer)-> listOfAllSurveyAnswers.add(answer));
+        }
+        return listOfAllSurveyAnswers;
+    }
+
     public double getAverageScore(){
 
         if(surveyResponses.size()>0){
-            int numberOfTotalAnswers =0;
+            int numberOfTotalAnswers = getListOfSurveyAnswers().size();
             double sumOfAnswers = 0;
 
-             for(SurveyResponse response: surveyResponses){
-                 numberOfTotalAnswers+= response.getSurveyAnswers().size();
-                 sumOfAnswers += response.getSurveyAnswers().values().stream().mapToInt(i -> i.intValue()).sum();
-
+             for(Integer answer : getListOfSurveyAnswers()){
+                 sumOfAnswers += answer;
              }
 
              averageSurveyScore = sumOfAnswers/numberOfTotalAnswers;
@@ -81,22 +89,18 @@ public class Survey {
         //std square of (x/size)
 
 
-        List<Integer> allAnswerScores= new ArrayList<>();
+        List<Integer> allAnswerScores= getListOfSurveyAnswers();
         double mean = getAverageScore();
-        int size =0;
+        int size =allAnswerScores.size();
+        double x = 0.0;
 
-        for(SurveyResponse sr: surveyResponses){
-            allAnswerScores.addAll(new ArrayList<Integer>(sr.getSurveyAnswers().values()));
-            size += sr.getSurveyAnswers().size();
+        for (Integer answer : allAnswerScores){
+            x += Math.pow(answer-mean, 2);
         }
 
-        double x = 0;
-        for(Integer i : allAnswerScores){
-            x += Math.pow(i-mean, 2);
-        }
+        System.out.println(x);
 
         double stdDeviation = Math.sqrt(x/size);
-
 
 
         return stdDeviation;
@@ -106,29 +110,11 @@ public class Survey {
 
 
     public int getMinimumScore(){
-        List<Integer> listOfResponseScores = new ArrayList<>();
-        int minScore =0;
-
-        for(SurveyResponse sr: surveyResponses){
-            listOfResponseScores.addAll(new ArrayList<Integer>(sr.getSurveyAnswers().values()));
-        }
-
-        minScore=Collections.min(listOfResponseScores);
-
-        return minScore;
+        return Collections.min(getListOfSurveyAnswers());
     }
 
     public int getMaximumScore(){
-        List<Integer> listOfResponseScores = new ArrayList<>();
-        int maxScore =0;
-
-        for(SurveyResponse sr: surveyResponses){
-            listOfResponseScores.addAll(new ArrayList<Integer>(sr.getSurveyAnswers().values()));
-        }
-
-        maxScore=Collections.max(listOfResponseScores);
-
-        return maxScore;
+        return Collections.max(getListOfSurveyAnswers());
     }
 
 
