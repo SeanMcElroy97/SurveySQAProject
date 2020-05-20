@@ -111,10 +111,10 @@ The workflow steps we should follow during development are
 
 10. Create Release Branch and Merge with master
 
-  - Before merging your code into production you should create a release branch.
-  - Create a release branch off of develop.
-  - E.g. 'release-1.1.0'.
-  - Once you are happy you can merge this with master and develop.
+    - Before merging your code into production you should create a release branch.
+    - Create a release branch off of develop.
+    - E.g. 'release-1.1.0'.
+    - Once you are happy you can merge this with master and develop.
 
 ---
 
