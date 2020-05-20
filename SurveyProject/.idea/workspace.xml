@@ -3,13 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="9e3cb0e7-17db-460e-b053-c434e1d0ff77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SurveyProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SurveyProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SurveyProject/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SurveyProject/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SurveyProject/Survey.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SurveyProject/Survey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SurveyProject/SurveyResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SurveyProject/SurveyResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/SurveyProject/SurveyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/SurveyProject/SurveyTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myAutoScrollToSource" value="true" />
+    <option name="myElementSize" value="271" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -30,7 +37,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -44,7 +51,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.All in SurveyProject">
+    <configuration name="All in SurveyProject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SurveyProject" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SurveyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SurveyProject" />
       <option name="PACKAGE_NAME" value="" />
@@ -54,9 +69,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SurveyTest.testQuestionMaxAnswer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SurveyProject" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SurveyTest" />
+      <option name="METHOD_NAME" value="testQuestionMaxAnswer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SurveyTest.testQuestionMinAnswer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SurveyProject" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SurveyTest" />
+      <option name="METHOD_NAME" value="testQuestionMinAnswer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SurveyTest.testQuestionStandardDeviation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SurveyProject" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SurveyTest" />
+      <option name="METHOD_NAME" value="testQuestionStandardDeviation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in SurveyProject" />
         <item itemvalue="JUnit.SurveyTest" />
+        <item itemvalue="JUnit.SurveyTest.testQuestionMaxAnswer" />
+        <item itemvalue="JUnit.SurveyTest.testQuestionMinAnswer" />
+        <item itemvalue="JUnit.SurveyTest.testQuestionStandardDeviation" />
       </list>
     </recent_temporary>
   </component>
@@ -82,5 +131,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SurveyProject$All_in_SurveyProject.ic" NAME="All in SurveyProject Coverage Results" MODIFIED="1589978891610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

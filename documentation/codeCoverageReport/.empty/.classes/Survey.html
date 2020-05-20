@@ -1,0 +1,257 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Survey</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">&lt;empty package name&gt;</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Survey (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Survey</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (19/ 19)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (71/ 71)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;import java.util.ArrayList;
+<i>2</i>&nbsp;import java.util.Collections;
+<i>3</i>&nbsp;import java.util.HashMap;
+<i>4</i>&nbsp;import java.util.List;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;public class Survey {
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;    private String surveyName;
+<b class="fc"><i>12</i>&nbsp;    private HashMap&lt;Integer, String&gt; surveyQuestions = new HashMap&lt;&gt;();</b>
+<b class="fc"><i>13</i>&nbsp;    private List&lt;SurveyResponse&gt; surveyResponses = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i>14</i>&nbsp;    private double averageSurveyScore = 0.0;</b>
+<b class="fc"><i>15</i>&nbsp;    private double surveyStdDeviation = 0.0;</b>
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;
+<b class="fc"><i>18</i>&nbsp;    public Survey(){}</b>
+<i>19</i>&nbsp;
+<b class="fc"><i>20</i>&nbsp;    public Survey(String surveyName) {</b>
+<b class="fc"><i>21</i>&nbsp;        this.surveyName= surveyName;</b>
+<b class="fc"><i>22</i>&nbsp;    }</b>
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;    public String getSurveyName() {
+<b class="fc"><i>26</i>&nbsp;        return surveyName;</b>
+<i>27</i>&nbsp;    }
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;    public HashMap&lt;Integer, String&gt; getSurveyQuestions() {
+<b class="fc"><i>30</i>&nbsp;        return surveyQuestions;</b>
+<i>31</i>&nbsp;    }
+<i>32</i>&nbsp;
+<i>33</i>&nbsp;    public void addSurveyQuestions(HashMap&lt;Integer, String&gt; moreSurveyQuestions) throws AssertionError{
+<i>34</i>&nbsp;
+<b class="fc"><i>35</i>&nbsp;       moreSurveyQuestions.forEach((questionNumber, questionSTr) -&gt; {</b>
+<b class="fc"><i>36</i>&nbsp;           if (surveyQuestions.size() &gt;= 10) {</b>
+<b class="fc"><i>37</i>&nbsp;               throw new IndexOutOfBoundsException();</b>
+<i>38</i>&nbsp;           } else {
+<b class="fc"><i>39</i>&nbsp;               surveyQuestions.put(questionNumber, questionSTr);</b>
+<i>40</i>&nbsp;           }
+<b class="fc"><i>41</i>&nbsp;       });</b>
+<b class="fc"><i>42</i>&nbsp;    }</b>
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;
+<i>45</i>&nbsp;    public List&lt;SurveyResponse&gt; getSurveyResponses() {
+<b class="fc"><i>46</i>&nbsp;        return surveyResponses;</b>
+<i>47</i>&nbsp;    }
+<i>48</i>&nbsp;
+<i>49</i>&nbsp;    public void addSurveyResponse(SurveyResponse surveyResponse){
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;        //Compare hashmaps by keys. Same keys good.
+<b class="fc"><i>52</i>&nbsp;        if(surveyResponse.getSurveyAnswers().keySet().equals(this.surveyQuestions.keySet())){</b>
+<b class="fc"><i>53</i>&nbsp;            this.surveyResponses.add(surveyResponse);</b>
+<i>54</i>&nbsp;        }else {
+<b class="fc"><i>55</i>&nbsp;            throw new IllegalArgumentException(&quot;Question numbers dont match&quot;);</b>
+<i>56</i>&nbsp;        }
+<b class="fc"><i>57</i>&nbsp;    }</b>
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;    public List&lt;Integer&gt; getListOfSurveyAnswers(){
+<i>60</i>&nbsp;
+<b class="fc"><i>61</i>&nbsp;        List&lt;Integer&gt; listOfAllSurveyAnswers = new ArrayList&lt;&gt;();</b>
+<i>62</i>&nbsp;
+<b class="fc"><i>63</i>&nbsp;        for(SurveyResponse response: surveyResponses){</b>
+<b class="fc"><i>64</i>&nbsp;            response.getSurveyAnswers().forEach((QuestionNum, answer)-&gt; listOfAllSurveyAnswers.add(answer));</b>
+<b class="fc"><i>65</i>&nbsp;        }</b>
+<b class="fc"><i>66</i>&nbsp;        return listOfAllSurveyAnswers;</b>
+<i>67</i>&nbsp;    }
+<i>68</i>&nbsp;
+<i>69</i>&nbsp;    public double getAverageScore(){
+<i>70</i>&nbsp;
+<b class="fc"><i>71</i>&nbsp;        if(surveyResponses.size()&gt;0){</b>
+<b class="fc"><i>72</i>&nbsp;            int numberOfTotalAnswers = getListOfSurveyAnswers().size();</b>
+<b class="fc"><i>73</i>&nbsp;            double sumOfAnswers = 0;</b>
+<i>74</i>&nbsp;
+<b class="fc"><i>75</i>&nbsp;             for(Integer answer : getListOfSurveyAnswers()){</b>
+<b class="fc"><i>76</i>&nbsp;                 sumOfAnswers += answer;</b>
+<b class="fc"><i>77</i>&nbsp;             }</b>
+<i>78</i>&nbsp;
+<b class="fc"><i>79</i>&nbsp;             averageSurveyScore = sumOfAnswers/numberOfTotalAnswers;</b>
+<i>80</i>&nbsp;        }
+<i>81</i>&nbsp;
+<b class="fc"><i>82</i>&nbsp;        return averageSurveyScore;</b>
+<i>83</i>&nbsp;    }
+<i>84</i>&nbsp;
+<i>85</i>&nbsp;    //Population standard dev. divided by n. Not n-1 for sample.
+<i>86</i>&nbsp;    public double getStdDeviation(){
+<i>87</i>&nbsp;        //Get mean
+<i>88</i>&nbsp;        //x =sum of each (value- the mean) squared
+<i>89</i>&nbsp;        //std square of (x/size)
+<i>90</i>&nbsp;
+<i>91</i>&nbsp;
+<b class="fc"><i>92</i>&nbsp;        List&lt;Integer&gt; allAnswerScores= getListOfSurveyAnswers();</b>
+<b class="fc"><i>93</i>&nbsp;        double mean = getAverageScore();</b>
+<b class="fc"><i>94</i>&nbsp;        int size =allAnswerScores.size();</b>
+<b class="fc"><i>95</i>&nbsp;        double x = 0.0;</b>
+<i>96</i>&nbsp;
+<b class="fc"><i>97</i>&nbsp;        for (Integer answer : allAnswerScores){</b>
+<b class="fc"><i>98</i>&nbsp;            x += Math.pow(answer-mean, 2);</b>
+<b class="fc"><i>99</i>&nbsp;        }</b>
+<i>100</i>&nbsp;
+<b class="fc"><i>101</i>&nbsp;        System.out.println(x);</b>
+<i>102</i>&nbsp;
+<b class="fc"><i>103</i>&nbsp;        double stdDeviation = Math.sqrt(x/size);</b>
+<i>104</i>&nbsp;
+<i>105</i>&nbsp;
+<b class="fc"><i>106</i>&nbsp;        return stdDeviation;</b>
+<i>107</i>&nbsp;
+<i>108</i>&nbsp;
+<i>109</i>&nbsp;    }
+<i>110</i>&nbsp;
+<i>111</i>&nbsp;
+<i>112</i>&nbsp;    public int getMinimumScore(){
+<b class="fc"><i>113</i>&nbsp;        return Collections.min(getListOfSurveyAnswers());</b>
+<i>114</i>&nbsp;    }
+<i>115</i>&nbsp;
+<i>116</i>&nbsp;    public int getMaximumScore(){
+<b class="fc"><i>117</i>&nbsp;        return Collections.max(getListOfSurveyAnswers());</b>
+<i>118</i>&nbsp;    }
+<i>119</i>&nbsp;
+<i>120</i>&nbsp;
+<i>121</i>&nbsp;
+<i>122</i>&nbsp;
+<i>123</i>&nbsp;    public List&lt;Integer&gt; getQuestionAnswersList(int questionNumber){
+<b class="fc"><i>124</i>&nbsp;        List&lt;Integer&gt; answers = new ArrayList&lt;&gt;();</b>
+<i>125</i>&nbsp;
+<b class="fc"><i>126</i>&nbsp;        for(SurveyResponse sr: surveyResponses){</b>
+<b class="fc"><i>127</i>&nbsp;            sr.getSurveyAnswers().forEach((questionNum,answer)-&gt;{</b>
+<b class="fc"><i>128</i>&nbsp;                if(questionNum==questionNumber) {</b>
+<b class="fc"><i>129</i>&nbsp;                    answers.add(answer);</b>
+<i>130</i>&nbsp;                }
+<b class="fc"><i>131</i>&nbsp;            } );</b>
+<b class="fc"><i>132</i>&nbsp;        }</b>
+<i>133</i>&nbsp;
+<b class="fc"><i>134</i>&nbsp;        return answers;</b>
+<i>135</i>&nbsp;    }
+<i>136</i>&nbsp;
+<i>137</i>&nbsp;    public double getQuestionMeanAverage(int questionNumber){
+<i>138</i>&nbsp;
+<b class="fc"><i>139</i>&nbsp;        int totalNumberOfAnswers = surveyResponses.size();</b>
+<i>140</i>&nbsp;
+<i>141</i>&nbsp;
+<b class="fc"><i>142</i>&nbsp;        double sumOfAnswers =0;</b>
+<b class="fc"><i>143</i>&nbsp;        for (Integer i: getQuestionAnswersList(questionNumber)){</b>
+<b class="fc"><i>144</i>&nbsp;            sumOfAnswers+=i;</b>
+<b class="fc"><i>145</i>&nbsp;        }</b>
+<i>146</i>&nbsp;
+<b class="fc"><i>147</i>&nbsp;        return sumOfAnswers/totalNumberOfAnswers;</b>
+<i>148</i>&nbsp;    }
+<i>149</i>&nbsp;
+<i>150</i>&nbsp;    public double getQuestionStandardDeviation(int questionNumber){
+<i>151</i>&nbsp;        //x =sum of each (value- the mean) squared
+<b class="fc"><i>152</i>&nbsp;        double x = 0.0;</b>
+<b class="fc"><i>153</i>&nbsp;        double stdDeviation = 0.0;</b>
+<b class="fc"><i>154</i>&nbsp;        double meanAvg = getQuestionMeanAverage(questionNumber);</b>
+<b class="fc"><i>155</i>&nbsp;        List&lt;Integer&gt; questionAnswersList = getQuestionAnswersList(questionNumber);</b>
+<i>156</i>&nbsp;
+<b class="fc"><i>157</i>&nbsp;        for (Integer answer : questionAnswersList){</b>
+<b class="fc"><i>158</i>&nbsp;            x += Math.pow(answer-meanAvg, 2);</b>
+<b class="fc"><i>159</i>&nbsp;        }</b>
+<i>160</i>&nbsp;
+<b class="fc"><i>161</i>&nbsp;        stdDeviation = Math.sqrt(x/questionAnswersList.size());</b>
+<i>162</i>&nbsp;
+<b class="fc"><i>163</i>&nbsp;        return stdDeviation;</b>
+<i>164</i>&nbsp;    }
+<i>165</i>&nbsp;
+<i>166</i>&nbsp;
+<i>167</i>&nbsp;    public int getQuestionMinimumAnswer(int questionNumber){
+<b class="fc"><i>168</i>&nbsp;        return Collections.min(getQuestionAnswersList(questionNumber));</b>
+<i>169</i>&nbsp;    }
+<i>170</i>&nbsp;
+<i>171</i>&nbsp;    public int getQuestionMaximumAnswer(int questionNumber) {
+<b class="fc"><i>172</i>&nbsp;        return Collections.max(getQuestionAnswersList(questionNumber));</b>
+<i>173</i>&nbsp;    }
+<i>174</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-05-20 14:03</div>
+</div>
+</body>
+</html>

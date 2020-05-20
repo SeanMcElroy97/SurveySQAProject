@@ -16,6 +16,9 @@ Code coverage or test coverage is a way of quantifying the amount of your source
 
 - A popular tool used for Code Coverage is SonarQube.
 
+  - Provides Macro metrics like Complexity.
+  - Can see trends of code coverage. Is are coverage getting better or worse?
+
 - Many IDE's have in built code coverage. Since I'm using IntelliJ, I will use inbuilt code coverage provided by intelliJ.
 
 ---
@@ -45,6 +48,14 @@ The areas highlighted red show code that isn't well covered.
 <p align="center">
 <img src="images/CodeCoverage/CodeCoverageGreenRed.PNG" alt="Code Coverage Controller class" width="700">
 </p>
+
+---
+
+---
+
+## Full Code Coverage report
+
+[Full Code Coverage report](codeCoverageReport/index.html)
 
 ---
 
