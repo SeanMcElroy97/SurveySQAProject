@@ -12,7 +12,7 @@ public class Survey {
     private HashMap<Integer, String> surveyQuestions = new HashMap<>();
     private List<SurveyResponse> surveyResponses = new ArrayList<>();
     private double averageSurveyScore = 0.0;
-    private double surveyStdDeviation = 0.0;
+//    private double surveyStdDeviation = 0.0;
 
 
     public Survey(){}
@@ -26,10 +26,12 @@ public class Survey {
         return surveyName;
     }
 
+    //Retrive questions of survey
     public HashMap<Integer, String> getSurveyQuestions() {
         return surveyQuestions;
     }
 
+    //Add some questions to this survey
     public void addSurveyQuestions(HashMap<Integer, String> moreSurveyQuestions) throws AssertionError{
 
        moreSurveyQuestions.forEach((questionNumber, questionSTr) -> {
@@ -41,11 +43,12 @@ public class Survey {
        });
     }
 
-
+    //Get all survey responses
     public List<SurveyResponse> getSurveyResponses() {
         return surveyResponses;
     }
 
+    //Add response to this survey
     public void addSurveyResponse(SurveyResponse surveyResponse){
 
         //Compare hashmaps by keys. Same keys good.
@@ -56,6 +59,7 @@ public class Survey {
         }
     }
 
+    //Get list of all survey question answers
     public List<Integer> getListOfSurveyAnswers(){
 
         List<Integer> listOfAllSurveyAnswers = new ArrayList<>();
@@ -66,6 +70,7 @@ public class Survey {
         return listOfAllSurveyAnswers;
     }
 
+    //get mean average score for entire survey.
     public double getAverageScore(){
 
         if(surveyResponses.size()>0){
@@ -83,6 +88,7 @@ public class Survey {
     }
 
     //Population standard dev. divided by n. Not n-1 for sample.
+    //Survey standard deviation
     public double getStdDeviation(){
         //Get mean
         //x =sum of each (value- the mean) squared
@@ -119,7 +125,7 @@ public class Survey {
 
 
 
-
+    //Get collection of answer values for specific question
     public List<Integer> getQuestionAnswersList(int questionNumber){
         List<Integer> answers = new ArrayList<>();
 
@@ -134,6 +140,7 @@ public class Survey {
         return answers;
     }
 
+    //get mean average for specific question
     public double getQuestionMeanAverage(int questionNumber){
 
         int totalNumberOfAnswers = surveyResponses.size();
@@ -147,6 +154,7 @@ public class Survey {
         return sumOfAnswers/totalNumberOfAnswers;
     }
 
+    //Get standard deviation for specif question
     public double getQuestionStandardDeviation(int questionNumber){
         //x =sum of each (value- the mean) squared
         double x = 0.0;
@@ -163,11 +171,12 @@ public class Survey {
         return stdDeviation;
     }
 
-
+    //get lowest score on particular question
     public int getQuestionMinimumAnswer(int questionNumber){
         return Collections.min(getQuestionAnswersList(questionNumber));
     }
 
+    //get highest score on a particular question
     public int getQuestionMaximumAnswer(int questionNumber) {
         return Collections.max(getQuestionAnswersList(questionNumber));
     }

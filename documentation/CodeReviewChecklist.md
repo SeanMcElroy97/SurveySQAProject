@@ -21,24 +21,24 @@ For our checklist we should follow these steps
 1. Ensure Correct branch
 
    - The merge should be into the correct branch
-   - feature branch should be merged with develop branch, not master branch
+   - feature branch should be merging with develop branch, not master branch
 
 2. Check Conversation tab
 
    - There may be important information in the conversation tab.
-   - Something the author wrote.
-   - A comment that a fellow reviewer wrote.
+   - E.g. Something the author wrote.
+   - E.g. A comment that a fellow reviewer wrote.
 
 3. Check commits tab
 
-   - Shows high level view of commits
+   - This shows a high level view of the commits.
    - Should be able to decipher what each commit pertains to.
 
 4. Verify changes
 
    - Involves checking the files tab.
    - Ensure code in files has good
-     - Design. (Appropriate for system and format/style)
+     - Design. (Appropriate for system + well formatted/styled)
      - Functionality
      - Refactoring (i.e. easy to follow logic, not overly complex)
      - Testing
@@ -51,9 +51,9 @@ For our checklist we should follow these steps
 
 #### Remember
 
-- The Reviewer should give honest feedback with the correct tone. The feedback should only concern the code, not the coder.
+- The Reviewer should give honest constructive feedback with the correct tone. The feedback should only concern the code, not the coder.
 
-- The Author should try to make it as easy as possible for the reviewer to review. Follow the Git flow steps, explain your rationale, reply to questions.
+- The Author should try to make it as easy as possible for the reviewer to review. Follow the Git flow steps, Explain rationale, reply to questions.
 
 ---
 

@@ -2,7 +2,7 @@
 
 I used **lucidChart** for my diagrams. Lucid chart is a web-based app that enables visual communication of complex systems.
 Supports flowcharts, process maps, **UML models** and organizational charts.
-It also supports collaboration for teams to utilize for better data visualization.
+It also supports collaboration for teams to utilize, enabling better data visualization.
 
 ### UML Use Case Diagram
 

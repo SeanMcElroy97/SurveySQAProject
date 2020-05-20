@@ -86,13 +86,13 @@ From the board my prioritization works from top to bottom. Highest physically on
 
 ### T-shirt Sizing
 
-I'm using T-shirt size method. I believe this is the most straight - forward method of task estimation for new developers and also understandable by people on the business side.
+I'm using T-shirt size method. I believe this is the most straight - forward method of task estimation for new developers and people on the business side.
 
 It's based on sizes of t-shirts (surprisingly).
 
 Generally T-shirts come in small, medium, large and extra large.
 
-Making estimates allows the process to go much quicker than traditional **Fibonacci sequence** estimation.
+Making estimates based on T-shirt sizes, allows the process to go much quicker than the traditional **Fibonacci sequence** estimation.
 The Fibonacci sequence. Each number is a sum of the two preceding numbers in the sequence. 1,2,3,5,8.
 
 The sizing in terms of time/hours depends on the project scope (size of project).
@@ -121,7 +121,7 @@ My sizing translates to.
 
 ### My Sizing
 
-Here are examples of some of my task estimations, far left I have a task marked 'S' = small. middle I have task marked 'M'= medium. and to the right I have a task marked 'L' = large.
+Here are examples of some of my task estimations, Left I have a task marked 'S' = small. Right I have task marked 'M'= medium. Bottom I have a task marked 'L' = large.
 
 - Small
 
@@ -129,19 +129,19 @@ Here are examples of some of my task estimations, far left I have a task marked 
 
 - Medium
 
-  - (Find Survey By Name) This task is similar to first as it involves going through a list but must find and retrieve particular Survey. Should be manageable and completed within a few hours. Thus i marked this task as Medium.
+  - (Find Survey By Name) This task is similar to first as it involves going through a list but must find and retrieve a particular Survey. Should be manageable and completed within a few hours. Thus i marked this task as Medium.
 
 - Large
 
-  - (View Survey Statistics) Statistical calculations is something i have little experience so the doubt factor increases the time i believe this will take. I believe this is one of the trickier tasks of the project thus making it an estimation of Large.
+  - (View Survey Statistics) Statistical calculations is something i have little experience with, so the **doubt factor** increases the time i believe this will take. This is one of the more trickier tasks of the project thus estimating it's sizing Large.
 
 ---
 
 ### Velocity
 
-- The velocity metric is used to determin the size of the entire sprint.
+- The velocity metric is used to determine the size of the entire sprint.
 
-- To calculate the velocity of a sprint, you must add up all the story points for each task.
+- To calculate the velocity of a sprint, you must add up all the story points for each individual task.
 
 - In our case with using T-shirt sizing estimation we will say
 
@@ -162,11 +162,11 @@ Here are examples of some of my task estimations, far left I have a task marked 
 #### Burndown Chart
 
 - Graphical representation of work left to do in a sprint.
-- y axis we have story points.
-- x axis we have time.
-- With a burndown chart we can predict likelihood of completing work in time available.
-- Closer to gradual decrease of story points the better. 1:1 ratio with time.
-- If your development is far off, you need to change estimation for next sprint.
+- y axis displays story points.
+- x axis displays time.
+- With a burndown chart we can predict likelihood of completing work in the time available.
+- The Closer to a gradual decrease of story points the better. 1:1 ratio with time.
+- If your development is far off (in either direction), you need to change estimation for next sprint.
 
 ---
 
