@@ -59,4 +59,12 @@ public class Controller {
     public double calculateSurveyAverage(Survey survey) {
         return survey.getAverageSurveyScore();
     }
+
+    public double calculateSurveyStdDeviation(Survey survey){
+        return survey.getSurveyStdDeviation();
+    }
+
+    public int getSurveyMinimumScore(Survey survey) {
+        return survey.getMinimumSurveyScore();
+    }
 }

@@ -1,6 +1,10 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+
+
+
 
 public class Survey {
 
@@ -8,6 +12,7 @@ public class Survey {
     private HashMap<Integer, String> surveyQuestions = new HashMap<>();
     private List<SurveyResponse> surveyResponses = new ArrayList<>();
     private double averageSurveyScore = 0.0;
+    private double surveyStdDeviation = 0.0;
 
 
     public Survey(){}
@@ -67,5 +72,49 @@ public class Survey {
         }
 
         return averageSurveyScore;
+    }
+
+    //Population standard dev. divided by n. Not n-1 for sample.
+    public double getSurveyStdDeviation(){
+        //Get mean
+        //x =sum of each (value- the mean) squared
+        //std square of (x/size)
+
+
+        List<Integer> allAnswerScores= new ArrayList<>();
+        double mean = getAverageSurveyScore();
+        int size =0;
+
+        for(SurveyResponse sr: surveyResponses){
+            allAnswerScores.addAll(new ArrayList<Integer>(sr.getSurveyAnswers().values()));
+            size += sr.getSurveyAnswers().size();
+        }
+
+        double x = 0;
+        for(Integer i : allAnswerScores){
+            x += Math.pow(i-mean, 2);
+        }
+
+        double stdDeviation = Math.sqrt(x/size);
+
+
+
+        return stdDeviation;
+
+
+    }
+
+
+    public int getMinimumSurveyScore(){
+        List<Integer> listOfResponseScores = new ArrayList<>();
+        int minScore =0;
+
+        for(SurveyResponse sr: surveyResponses){
+            listOfResponseScores.addAll(new ArrayList<Integer>(sr.getSurveyAnswers().values()));
+        }
+
+        minScore=Collections.min(listOfResponseScores);
+
+        return minScore;
     }
 }

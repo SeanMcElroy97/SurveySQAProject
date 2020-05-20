@@ -286,6 +286,60 @@ public class SurveyTest {
 
 
     //Survey Question Statistics
+    //Standard deviation for whole population
+    //there is a different formula for sample population
+    @Test
+    public void testCalculateStandardDeviation(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        HashMap<Integer, String> listOfQuestions = new HashMap<>();
+        listOfQuestions.put(1, "How good was your year?");
+        endOfYearSurvey.addSurveyQuestions(listOfQuestions);
+
+        //Responses
+        SurveyResponse endOfYearSurveyResponse1 = new SurveyResponse();
+        HashMap<Integer, Integer> survey1Answers = new HashMap<>();
+        survey1Answers.put(1, 2);
+        endOfYearSurveyResponse1.addAnswersToResponse(survey1Answers);
+        ///
+        SurveyResponse endOfYearSurveyResponse2 = new SurveyResponse();
+        HashMap<Integer, Integer> survey2Answers = new HashMap<>();
+        survey2Answers.put(1, 5);
+        endOfYearSurveyResponse2.addAnswersToResponse(survey2Answers);
+
+        ///
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse1);
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse2);
+
+
+        assertEquals(1.5, c.calculateSurveyStdDeviation(endOfYearSurvey), 0.0);
+    }
+
+
+    @Test
+    public void testMinimumScoreForSurvey(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        HashMap<Integer, String> listOfQuestions = new HashMap<>();
+        listOfQuestions.put(1, "How good was your year?");
+        endOfYearSurvey.addSurveyQuestions(listOfQuestions);
+
+        //Responses
+        SurveyResponse endOfYearSurveyResponse1 = new SurveyResponse();
+        HashMap<Integer, Integer> survey1Answers = new HashMap<>();
+        survey1Answers.put(1, 2);
+        endOfYearSurveyResponse1.addAnswersToResponse(survey1Answers);
+        ///
+        SurveyResponse endOfYearSurveyResponse2 = new SurveyResponse();
+        HashMap<Integer, Integer> survey2Answers = new HashMap<>();
+        survey2Answers.put(1, 5);
+        endOfYearSurveyResponse2.addAnswersToResponse(survey2Answers);
+        ///
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse1);
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse2);
+
+        assertEquals(2, c.getSurveyMinimumScore(endOfYearSurvey));
+
+
+    }
 
 
 }
