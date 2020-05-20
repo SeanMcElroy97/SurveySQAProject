@@ -19,7 +19,7 @@
 
 To help minimize the potential pitfalls of team version control.
 
-Every developer must agree a standard process of making changes within our projects.
+Every developer on team must agree on a standard process of making changes within projects.
 
 A good process to follow for Team version control is the **git flow process**
 
@@ -37,11 +37,11 @@ From the image below, if my branching naming is correct you should be able to de
   - this branch is where i included my sprint backlog and my task estimates.
 
 - 'testing-theory'
-  - this branch explains the theory by test driven development and my process for unit testing
+  - this branch explains the theory by test driven development and my process for unit testing.
 
 ---
 
-## Some of the branches, most created off 'develop'
+## Some of the branches, most created off of 'develop' branch.
 
 <p align="center">
 <img src="images/DifferentFeatureBranches.PNG" alt="Example of feature branches">
@@ -65,7 +65,7 @@ The workflow steps we should follow during development are
    - 'master' branch can be seen as the production code.
    - only make release changes to the master branch
    - instead make a develop branch.
-   - all further changes will be branched off 'develop'.
+   - all further features will be branched off 'develop'.
 
 3. Clone this repository on your local machines
 
@@ -75,27 +75,28 @@ The workflow steps we should follow during development are
 4. Create feature branch.
 
    - Before making changes you should create a branch off develop
-   - This branch should be specificcaly contain changes for one feature.
-   - Adequately named branches should be able to convey what functionality is in them.
+   - This branch should contain changes for one feature.
+   - Adequately named branches should be able to convey what functionality is inside.
 
 5. Make Regular commits
 
    - Commit early and often when adding specific aspects of the feature.
    - This helps not only as a backup if something goes wrong during development.
-   - But also helps other developers, who are reading it to see which changes were made where.
+   - But also helps other developers, who are reading/reviewing it, to see what changes were made and when.
 
 6. Make a Pull Request
 
-   - A pull request is an attempt to merge changes you've made into other changes.
+   - A pull request is an attempt to merge changes you've made into another branch.
    - It involves the code in one branch joining another.
-   - In my case the code from feature branches to the develop branch
+   - In my case the code from feature branches to the develop branch.
+     - The code in my feature branch is now being added to develop.
 
 7. Code Review
 
-   - Before code is merged into a higher branch, it's important for other developers to check this.
+   - Before code is merged into a higher branch, it's important for other developers to check/review this.
    - This will hopefully allow any potential issues to be spotted.
    - Developers should follow a check list when reviewing a pull request. (Checklist covered in next section)
-   - Any issues the reviewer can comment and then the author of changes can fix the issues.
+   - If any issues are spotted, the reviewer can comment, notifying the author who should fix the issues.
 
 8. Accept/Merge Pull request
 
@@ -103,9 +104,17 @@ The workflow steps we should follow during development are
    - The author should merge code into the upper branch e.g. 'develop'
 
 9. Pull latest
-   - This step is important to avoid potential of conflicts.
-   - Each develop should pull the latest versions of the project, before making changes.
-   - can be done with something like 'git pull (desired branch name)'
+
+   - This step is important to avoid potential conflicts.
+   - Each developer should pull the latest versions of the project, before making further changes.
+   - Can pull latest changes with a command like 'git pull (desired branch name)'
+
+10. Create Release Branch and Merge with master
+
+- Before merging your code into production you should create a release branch.
+- Create a release branch off of develop.
+- E.g. 'release-1.1.0'.
+- Once you are happy you can merge this with master and develop.
 
 ---
 

@@ -6,26 +6,26 @@ Code coverage or test coverage is a way of quantifying the amount of your source
 
 - It is used as an exit criteria for each milestone. E.g. Sprint
 
-- In our example the specific code coverage metric will be coverage from unit tests.
+- In our example the specific code coverage metric will be 'coverage from unit tests'.
 
-- Typically a good code coverage percentage is **85% - 90%**. - i.e. This is the percentage of your code is covered by testing.
+- Typically a good code coverage percentage is **85% - 90%**. - i.e. This is the percentage of your code that is covered by testing.
 
-- The higher the percentage of code coverage. The more confident you can be about bugs and defects.
+- The higher the percentage of code coverage, the less likelihood that bugs and defects will be an issue.
 
-- A high percentage does not mean your code is well tested. The quality of your unit tests will determine that.
+- A high coverage percentage does not mean your code is well tested. The quality of your unit tests will determine that.
 
 - A popular tool used for Code Coverage is SonarQube.
 
   - Provides Macro metrics like Complexity.
-  - Can see trends of code coverage. Is are coverage getting better or worse?
+  - Can see trends of code coverage. e.g. Is are coverage getting better or worse?
 
-- Many IDE's have in built code coverage. Since I'm using IntelliJ, I will use inbuilt code coverage provided by intelliJ.
+- Many IDE's have in built code coverage. Since I'm using IntelliJ, I will us the inbuilt code coverage tool provided by intelliJ.
 
 ---
 
 ## Total Code Coverage
 
-From the image below you can see my code coverage is **99%**
+From the image below you can see my code coverage is **99%** overall.
 
 ---
 
