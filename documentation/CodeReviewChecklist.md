@@ -109,4 +109,5 @@ For our checklist we should follow these steps
 - [UML Modelling](UMLModelling.md)
 - [Sprint Backlog And Task Estimation](SprintBacklogAndTaskEstimation.md)
 - [Unit Testing And Test Driven Development](UnitTestingAndTestDrivenDevelopment.md)
+- [Code coverage](CodeCoverage.md)
 - [Team Version Control](TeamVersionControl.md)
