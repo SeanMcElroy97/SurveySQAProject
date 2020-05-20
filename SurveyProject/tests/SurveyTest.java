@@ -16,7 +16,7 @@ public class SurveyTest {
     Controller c = new Controller();
     String endofYearSurveyName = "End of year survey";
 
-    //SUrvey creation
+    //Test creating instance of controller
     @Test
     public void getControllerInstance(){
         Controller controllerObj = new Controller();
@@ -32,6 +32,7 @@ public class SurveyTest {
         assertTrue("Create empty Survey object", emptySurvey instanceof Survey);
     }
 
+    //Test to create survey with a name
     @Test
     public void createSurveyWithName(){
 
@@ -41,7 +42,7 @@ public class SurveyTest {
 
     }
 
-    //Test adding 2 questions
+    //Test adding 2 questions to a survey
     @Test
     public void addQuestionsToSurvey(){
         HashMap<Integer, String> listOfQuestions = new HashMap<>();
@@ -57,7 +58,7 @@ public class SurveyTest {
 
     }
 
-    //Test adding 11 questions over the limit of survey 10
+    //Test adding 11 questions to survey. Survey limit is 10 questions
     @Test(expected = IndexOutOfBoundsException.class)
     public void add11QuestionToSurvey(){
         HashMap<Integer, String> listOfQuestions = new HashMap<>();
@@ -77,7 +78,7 @@ public class SurveyTest {
         c.addQuestionsToSurvey(endOfYearSurvey, listOfQuestions);
     }
 
-    //BoundaryCases
+    //BoundaryCase add exactly 10 questions to survey
     @Test
     public void add10QuestionToSurvey(){
         HashMap<Integer, String> listOfQuestions = new HashMap<>();
@@ -102,6 +103,7 @@ public class SurveyTest {
     }
 
 
+    //Test adding survey to the collection surveys
     @Test
     public void addSurveyToSurveyCollection(){
         Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
@@ -116,6 +118,7 @@ public class SurveyTest {
 
     }
 
+    //Test to see if you can create a survey with same name as an existing survey.
     @Test(expected = IllegalArgumentException.class)
     public void testNewSurveyWithExistingName(){
         Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
@@ -131,6 +134,7 @@ public class SurveyTest {
 
     //Survey Response
 
+    //Test Create empty survey response object
     @Test
     public void createSurveyResponse(){
         SurveyResponse emptySurveyResponse = c.createEmptySurveyResponse();
@@ -138,6 +142,7 @@ public class SurveyTest {
         assertTrue("create Empty Survey Response", emptySurveyResponse instanceof SurveyResponse);
     }
 
+    //test Adding answers to a response object
     @Test
     public void addAnswersToSurveyResponse(){
         SurveyResponse surveyResponse = c.createEmptySurveyResponse();
@@ -152,6 +157,7 @@ public class SurveyTest {
         assertEquals(2, numberOfSurveyAnswers);
     }
 
+    //test to Add wrong question number answer
     @Test(expected = IllegalArgumentException.class)
     public void addInvalidResponseAnswer(){
         SurveyResponse surveyResponse = c.createEmptySurveyResponse();
@@ -163,6 +169,7 @@ public class SurveyTest {
 
     }
 
+    //Test submitting survey response.
     @Test
     public void addSurveyResponseToSurvey(){
         Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
@@ -175,6 +182,7 @@ public class SurveyTest {
         assertEquals(1, numOfSurveyResponses);
     }
 
+    //Test incorrect ratio of answers to questions
     @Test(expected = IllegalArgumentException.class)
     public void testDifferentNumOfAnswersToQuestions(){
         Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
@@ -197,7 +205,7 @@ public class SurveyTest {
 
     //Viewing survey
 
-    //Return collection of survey
+    //Test Returning collection of surveys
     @Test
     public void testViewAllSurveys(){
         Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
@@ -213,6 +221,7 @@ public class SurveyTest {
         assertEquals(surveyList, c.getSurveyList());
     }
 
+    //Test finding survey by name of the survey
     @Test
     public void findSurveyByNameTest(){
         Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
@@ -227,7 +236,7 @@ public class SurveyTest {
 
     }
 
-
+    //Test finding survey by wrong name
     @Test(expected = NullPointerException.class)
     public void findSurveyByNameThatDoesntExist(){
         Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
@@ -236,6 +245,7 @@ public class SurveyTest {
 
     }
 
+    //test retrieving all survey responses
     @Test
     public void getAllResponsesToSurvey(){
         Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
@@ -257,7 +267,7 @@ public class SurveyTest {
 
     // Survey Statistics
 
-    //Average score of particular survey
+    //Test getting Average score of a particular survey
     @Test
     public void testAverageSurveyScore(){
         Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
@@ -284,7 +294,7 @@ public class SurveyTest {
         assertEquals(3.5,c.calculateSurveyAverage(endOfYearSurvey), 0.0);
     }
 
-
+    //Test to calculate standard deviation of survey
     //Survey Question Statistics
     //Standard deviation for whole population
     //there is a different formula for sample population
@@ -314,6 +324,7 @@ public class SurveyTest {
         assertEquals(1.5, c.calculateSurveyStdDeviation(endOfYearSurvey), 0.0);
     }
 
+    //Test to calculate standard deviation of survey that contains more than 1 question
     @Test
     public void testCalculateStandardDeviationMultipleQuestions(){
         Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
@@ -350,6 +361,7 @@ public class SurveyTest {
     }
 
 
+    //test to find minimum score for a survey
     @Test
     public void testMinimumScoreForSurvey(){
         Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
@@ -376,6 +388,7 @@ public class SurveyTest {
 
     }
 
+    //Test to find maximum score for a survey
     @Test
     public void testMaximumScoreForSurvey(){
         Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
@@ -402,6 +415,7 @@ public class SurveyTest {
 
     }
 
+    //Test to get mean average score for a specific question
     @Test
     public void getQuestionAverageScore(){
         Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
@@ -431,6 +445,7 @@ public class SurveyTest {
     }
 
 
+    //Test to get Standard deviation of a specific question
     @Test
     public void testQuestionStandardDeviation(){
         Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
@@ -458,7 +473,7 @@ public class SurveyTest {
         assertEquals(1.5, c.getSurveyQuestionAnswerStdDeviation(endOfYearSurvey, 1), 0.0);
     }
 
-
+    //Test to find lowest score answer for a specific question
     @Test
     public void testQuestionMinAnswer(){
         Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
@@ -488,6 +503,7 @@ public class SurveyTest {
     }
 
 
+    //Test to find highest score for specific question
     @Test
     public void testQuestionMaxAnswer(){
         Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
