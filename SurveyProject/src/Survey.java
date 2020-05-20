@@ -7,6 +7,8 @@ public class Survey {
     private String surveyName;
     private HashMap<Integer, String> surveyQuestions = new HashMap<>();
     private List<SurveyResponse> surveyResponses = new ArrayList<>();
+    private double averageSurveyScore = 0.0;
+
 
     public Survey(){}
 
@@ -47,6 +49,23 @@ public class Survey {
         }else {
             throw new IllegalArgumentException("Question numbers dont match");
         }
+    }
 
+    public double getAverageSurveyScore(){
+
+        if(surveyResponses.size()>0){
+            int numberOfTotalAnswers =0;
+            double sumOfAnswers = 0;
+
+             for(SurveyResponse response: surveyResponses){
+                 numberOfTotalAnswers+= response.getSurveyAnswers().size();
+                 sumOfAnswers += response.getSurveyAnswers().values().stream().mapToInt(i -> i.intValue()).sum();
+
+             }
+
+             averageSurveyScore = sumOfAnswers/numberOfTotalAnswers;
+        }
+
+        return averageSurveyScore;
     }
 }

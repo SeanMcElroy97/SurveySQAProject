@@ -255,4 +255,37 @@ public class SurveyTest {
     }
 
 
+    // Survey Statistics
+
+    //Average score of particular survey
+    @Test
+    public void testAverageSurveyScore(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        HashMap<Integer, String> listOfQuestions = new HashMap<>();
+        listOfQuestions.put(1, "How good was your year?");
+        endOfYearSurvey.addSurveyQuestions(listOfQuestions);
+
+        //Responses
+        SurveyResponse endOfYearSurveyResponse1 = new SurveyResponse();
+        HashMap<Integer, Integer> survey1Answers = new HashMap<>();
+        survey1Answers.put(1, 2);
+        endOfYearSurveyResponse1.addAnswersToResponse(survey1Answers);
+        ///
+        SurveyResponse endOfYearSurveyResponse2 = new SurveyResponse();
+        HashMap<Integer, Integer> survey2Answers = new HashMap<>();
+        survey2Answers.put(1, 5);
+        endOfYearSurveyResponse2.addAnswersToResponse(survey2Answers);
+
+
+        ///
+        endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse1);
+       endOfYearSurvey.addSurveyResponse(endOfYearSurveyResponse2);
+
+        assertEquals(3.5,c.calculateSurveyAverage(endOfYearSurvey), 0.0);
+    }
+
+
+    //Survey Question Statistics
+
+
 }

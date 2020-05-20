@@ -55,4 +55,8 @@ public class Controller {
              throw new NullPointerException("Survey doesn't exist");
 
     }
+
+    public double calculateSurveyAverage(Survey survey) {
+        return survey.getAverageSurveyScore();
+    }
 }
