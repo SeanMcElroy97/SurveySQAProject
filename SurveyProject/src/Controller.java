@@ -13,11 +13,7 @@ public class Controller {
     public Survey createSurveyWithName(String name) {
         for (Survey s: surveyList){
             if (s.getSurveyName() == name){
-                try {
-                    throw new AssertionError("survey already exists");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                    throw new IllegalArgumentException("survey already exists");
             }
         }
         return new Survey(name);
@@ -56,6 +52,7 @@ public class Controller {
                 return survey;
             }
         }
-        return null;
+             throw new NullPointerException("Survey doesn't exist");
+
     }
 }

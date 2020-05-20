@@ -27,7 +27,7 @@ public class Survey {
 
        moreSurveyQuestions.forEach((questionNumber, questionSTr) -> {
            if (surveyQuestions.size() >= 10) {
-               throw new AssertionError();
+               throw new IndexOutOfBoundsException();
            } else {
                surveyQuestions.put(questionNumber, questionSTr);
            }
@@ -45,7 +45,7 @@ public class Survey {
         if(surveyResponse.getSurveyAnswers().keySet().equals(this.surveyQuestions.keySet())){
             this.surveyResponses.add(surveyResponse);
         }else {
-            throw new AssertionError("Question numbers dont match");
+            throw new IllegalArgumentException("Question numbers dont match");
         }
 
     }

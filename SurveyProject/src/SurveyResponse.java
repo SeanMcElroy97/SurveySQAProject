@@ -11,7 +11,7 @@ public class SurveyResponse {
         someSurveyAnswers.forEach((questionNumber, qUestionAnswer) ->{
 
             if(qUestionAnswer<1 || qUestionAnswer>5){
-                throw new AssertionError();
+                throw new IllegalArgumentException();
             }else{
             surveyAnswers.put(questionNumber, qUestionAnswer);
             }

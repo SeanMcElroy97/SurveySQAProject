@@ -1,4 +1,8 @@
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.junit.runners.BlockJUnit4ClassRunner;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,6 +10,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+//@RunWith(value = BlockJUnit4ClassRunner.class)
 public class SurveyTest {
 
     Controller c = new Controller();
@@ -53,7 +58,7 @@ public class SurveyTest {
     }
 
     //Test adding 11 questions over the limit of survey 10
-    @Test(expected = AssertionError.class)
+    @Test(expected = IndexOutOfBoundsException.class)
     public void add11QuestionToSurvey(){
         HashMap<Integer, String> listOfQuestions = new HashMap<>();
         listOfQuestions.put(1, "How good was your year?");
@@ -111,7 +116,7 @@ public class SurveyTest {
 
     }
 
-    @Test(expected = AssertionError.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testNewSurveyWithExistingName(){
         Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
         c.addSurveyToList(endOfYearSurvey);
@@ -147,7 +152,7 @@ public class SurveyTest {
         assertEquals(2, numberOfSurveyAnswers);
     }
 
-    @Test(expected = AssertionError.class)
+    @Test(expected = IllegalArgumentException.class)
     public void addInvalidResponseAnswer(){
         SurveyResponse surveyResponse = c.createEmptySurveyResponse();
 
@@ -170,7 +175,7 @@ public class SurveyTest {
         assertEquals(1, numOfSurveyResponses);
     }
 
-    @Test(expected = AssertionError.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testDifferentNumOfAnswersToQuestions(){
         Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
         HashMap<Integer, String> listOfQuestions = new HashMap<>();
@@ -220,6 +225,16 @@ public class SurveyTest {
 
         assertEquals(endOfYearSurvey, surveyFoundByName);
 
+    }
+
+//    @Rule
+//    public ExpectedException thrown = ExpectedException.none();
+
+    @Test(expected = NullPointerException.class)
+    public void findSurveyByNameThatDoesntExist(){
+        Survey endOfYearSurvey = c.createSurveyWithName(endofYearSurveyName);
+        c.addSurveyToList(endOfYearSurvey);
+        Survey surveyFoundByName = c.findSurveyByName("turkey");
 
     }
 
