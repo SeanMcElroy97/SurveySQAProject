@@ -54,12 +54,12 @@ The most current version is JUnit 5 but i will probably use JUnit 4 as it contai
 
 This is the process of
 
-1. Create test for functionality
-2. Run it to ensure it fails (Red)
-3. Make adjustments to code. (Refactoring)
+1. Create test for functionality.
+2. Run it to ensure it fails (Red).
+3. Make adjustments to code.
 4. Run test again.
-5. Repeat 3 & 4 until tests pass
-6. May Refactor code without changing behaviour
+5. Repeat 3 & 4 until tests pass (Green).
+6. May Refactor code without changing behaviour (Refactoring).
 
 The reason you want to make test fail first is to ensure your change of code is making the test pass.
 
