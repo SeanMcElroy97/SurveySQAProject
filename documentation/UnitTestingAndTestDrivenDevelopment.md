@@ -126,5 +126,6 @@ The process I will follow for unit testing.
 - [Readme](../README.md)
 - [UML Modelling](UMLModelling.md)
 - [Sprint Backlog And Task Estimation](SprintBacklogAndTaskEstimation.md)
+- [Code coverage](CodeCoverage.md)
 - [Team Version Control](TeamVersionControl.md)
 - [Code Review Checklist](CodeReviewChecklist.md)
